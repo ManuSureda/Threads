@@ -35,5 +35,14 @@ public class Biblioteca{
         notifyAll();
     }
 
-
+    public synchronized  void donar (Libro l){
+        while (libros.size()>19){
+            try{
+                wait();
+            }catch (InterruptedException e)
+            {}
+        }
+        libros.put(l.getIdLibro(),l);
+        notifyAll();
+    }
 }

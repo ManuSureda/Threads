@@ -25,8 +25,8 @@ public class Socio extends Thread{
     public int aleatorio ()
     {
         Random ran = new Random();
-
-        int val = ran.nextInt()%11;
+        int aux = this.biblioteca.getLibros().size();
+        int val = ran.nextInt()%aux;
 
         if (val<0)
         {
