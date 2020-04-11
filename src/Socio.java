@@ -46,13 +46,13 @@ public class Socio extends Thread{
                 val = this.aleatorio();
                 this.setLibro(biblioteca.retirar(val));
                 if (this.getLibro()!=null){
-                    System.out.println("El socio " + this.getNombre()+ " saco el libro "+this.getLibro().getTitulo());
+                    System.out.println("El socio " + this.getNombre()+ " saco el libro "+this.getLibro().getTitulo()+ " cantidad de libros: "+ biblioteca.getLibros().size());
                 }
                 Socio.sleep((long)aleatorio());
 
                 biblioteca.devolver(this.libro);
                 if(this.getLibro()!=null){
-                    System.out.println("El socio " + this.getNombre()+ " devolvio el libro "+this.getLibro().getTitulo());
+                    System.out.println("El socio " + this.getNombre()+ " devolvio el libro "+this.getLibro().getTitulo()+ " cantidad de libros: "+ biblioteca.getLibros().size());
                 }
                 Socio.sleep((long)aleatorio());
             }
